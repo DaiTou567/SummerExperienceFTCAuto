@@ -7,6 +7,10 @@ public class MathConstantHeading {
     double xVector = 0;
     double yVector = 0;
 
+    public MathConstantHeading(){
+
+    }
+
     public void setTarget(double xPose, double yPose){
         targetX = xPose;
         targetY = yPose;
