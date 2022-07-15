@@ -10,17 +10,16 @@ import org.firstinspires.ftc.teamcode.common.Constants;
 @Autonomous(name = "Summer Experience Route", group = "Routes")
 public abstract  class MoveOpMode extends LinearOpMode{
     //declaring local class objects
-
     Hardware_Drive robot = new Hardware_Drive();
     Constants constants = new Constants();
     ConstantHeading constHeading = new ConstantHeading(this);
 
 
-
+    //runopmode function allows code to run, built into sdk
     @Override
     public void runOpMode(){
         robot.init(hardwareMap);
         waitForStart();
-        constHeading.drive(1,2,3);
+        //put calls for constantheading here
     }
 }
