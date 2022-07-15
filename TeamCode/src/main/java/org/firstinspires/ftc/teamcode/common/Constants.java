@@ -32,3 +32,4 @@ public class Constants {
     public double spinClockwise = 1600;
     public double spinCounterClockwise = - 1600;
 }
+

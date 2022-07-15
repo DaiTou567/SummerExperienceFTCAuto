@@ -35,3 +35,4 @@ public class MathConstantHeading {
         return yVector;
     }
 }
+

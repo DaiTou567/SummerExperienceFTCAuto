@@ -71,6 +71,10 @@ public class ConstantHeading {
         linearOpMode.telemetry.update();
     }
 
+    public void constantHeading(){
+        
+    }
+
     public void constantHeading(double speed, double xPose, double yPose){
         //calling functions from MathConstantHeading
         constHeading.setTarget(xPose, yPose);
@@ -144,3 +148,4 @@ public class ConstantHeading {
         ).firstAngle;
     }
 }
+
