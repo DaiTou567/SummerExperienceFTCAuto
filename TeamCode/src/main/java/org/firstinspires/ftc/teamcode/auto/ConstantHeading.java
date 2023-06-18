@@ -41,6 +41,7 @@ public class ConstantHeading {
     static final double     COUNTS_PER_INCH         = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * 3.1415);
 
+
     public ConstantHeading(LinearOpMode plinear){
 
         linearOpMode = plinear;
@@ -72,6 +73,9 @@ public class ConstantHeading {
     }
 
     public void drive(double speed, double xPose, double yPose){
+
+
+    public void drive (double speed, double xPose, double yPose) {
         //calling functions from MathConstantHeading
         constHeading.setTarget(xPose, yPose);
         constHeading.coordinateToVector();
