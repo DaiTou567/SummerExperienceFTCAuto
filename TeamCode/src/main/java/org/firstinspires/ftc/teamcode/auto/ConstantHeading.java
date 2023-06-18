@@ -72,10 +72,8 @@ public class ConstantHeading {
         linearOpMode.telemetry.update();
     }
 
-    public void drive(double speed, double xPose, double yPose){
 
-
-    public void drive (double speed, double xPose, double yPose) {
+    public void drive(double speed, double xPose, double yPose) {
         //calling functions from MathConstantHeading
         constHeading.setTarget(xPose, yPose);
         constHeading.coordinateToVector();
