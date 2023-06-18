@@ -9,11 +9,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.teamcode.common.Constants;
 
 
-@Autonomous(name = "Test Path", group = "Drive")
-
-public abstract class MoveOpMode extends LinearOpMode {
 @Autonomous(name = "Summer Experience Route", group = "Routes")
-public abstract  class MoveOpMode extends LinearOpMode{
+public abstract  class MoveOpMode extends LinearOpMode {
     //declaring local class objects
     Hardware_Drive robot = new Hardware_Drive();
     Constants constants = new Constants();
@@ -25,15 +22,10 @@ public abstract  class MoveOpMode extends LinearOpMode{
 
         waitForStart();
 
-        constantHeading.drive(1 , 2, 4);
-    ConstantHeading constHeading = new ConstantHeading(this);
+        constantHeading.drive(1, 2, 4);
+        ConstantHeading constHeading = new ConstantHeading(this);
 
 
-    //runopmode function allows code to run, built into sdk
-    @Override
-    public void runOpMode(){
-        robot.init(hardwareMap);
-        waitForStart();
-        //put calls for constantheading here
+        //runopmode function allows code to run, built into sdk
     }
 }
