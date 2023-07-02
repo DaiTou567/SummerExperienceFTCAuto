@@ -39,7 +39,7 @@ public class ConstantHeading {
     static final double     DRIVE_GEAR_REDUCTION    = 1.0 ;     // This is < 1.0 if geared UP
     static final double     WHEEL_DIAMETER_INCHES   =  (96.0/25.4);     // For figuring circumference
     static final double     COUNTS_PER_INCH         = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
-            (WHEEL_DIAMETER_INCHES * 3.1415);
+            (WHEEL_DIAMETER_INCHES * Math.PI);
 
 
     public ConstantHeading(LinearOpMode plinear){
@@ -60,13 +60,11 @@ public class ConstantHeading {
         robot.rFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.lBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.rBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.lifter.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         robot.lFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         robot.rFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         robot.lBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         robot.rBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        robot.lifter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         linearOpMode.telemetry.addData("Status", "Waiting on Camera");
         linearOpMode.telemetry.update();
