@@ -19,8 +19,7 @@ public class Hardware_Drive {
     public DcMotorEx lifter = null;
 
     //creating servo objects
-    public Servo intake = null;
-    public CRServo continiousServo = null;
+    public Servo claw = null;
 
     //creating sensors
     public BNO055IMU imu;
@@ -44,8 +43,8 @@ public class Hardware_Drive {
         lBack  = hwMap.get(DcMotorEx.class, "left_back");
         rBack  = hwMap.get(DcMotorEx.class, "right_back");
 
-        duckWheel = hwMap.get(DcMotorEx.class, "carousel");
-        lifter = hwMap.get(DcMotorEx.class, "lifter");
+        //initialize servos
+        claw = hwMap.get(Servo.class, "claw");
 
         //initializing imu
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
@@ -60,13 +59,10 @@ public class Hardware_Drive {
         imu.initialize(parameters);
 
         //motor directions
-        lFront.setDirection(DcMotorEx.Direction.FORWARD);
-        lBack.setDirection(DcMotorEx.Direction.FORWARD);
+        lFront.setDirection(DcMotorEx.Direction.REVERSE);
+        lBack.setDirection(DcMotorEx.Direction.REVERSE);
         rFront.setDirection(DcMotorEx.Direction.FORWARD);
         rBack.setDirection(DcMotorEx.Direction.FORWARD);
-
-        duckWheel.setDirection(DcMotorEx.Direction.REVERSE);
-        lifter.setDirection(DcMotorEx.Direction.REVERSE);
 
         // set all motors to zero power
         lFront.setPower(0);
@@ -74,17 +70,11 @@ public class Hardware_Drive {
         lBack.setPower(0);
         rBack.setPower(0);
 
-        duckWheel.setPower(0);
-        lifter.setPower(0);
-
         // set all motors to run without encoders
         // may want to use RUN_USING_ENCODERS if encoders are installed
         lFront.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         lBack.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         rFront.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         rBack.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
-
-        duckWheel.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
-        lifter.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
     }
 }
